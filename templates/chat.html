@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chatbot - {{ bot_type.replace('_', ' ').title() }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background: url('{{ url_for('static', filename='images/img2.jpg') }}') no-repeat center center fixed; background-size: cover; margin: 0; padding: 0; height: 100vh; display: flex; flex-direction: column;">
+    
+    <div class="chat-header" style="text-align: center; padding: 10px;">
+        <img id="bot-avatar" src="{{ url_for('static', filename='images/' + bot_info.avatar) }}" alt="Bot Avatar">
+        <h1>Chatbot - {{ bot_type.replace("_", " ").title() }}</h1>
+    </div>
+    
+    <div class="chat-box" id="chat-box" style="flex: 1; overflow-y: auto; padding: 20px; position: relative;">
+        <div id="processing-indicator" style="display: none; text-align: center; font-size: 18px;">Processing...</div>
+    </div>
+    
+    <div class="input-container" style="display: flex; padding: 10px; background: rgba(0, 0, 0, 0.6);">
+        <input type="text" id="user-input" placeholder="Type or speak..." style="flex: 1; padding: 10px; border: none; border-radius: 5px;">
+        <button id="send-btn" style="background: gray; color: white; border: none; padding: 10px; border-radius: 5px; margin-left: 10px;">Send</button>
+        <button id="mic-btn" style="background: transparent; border: none; margin-left: 10px; font-size: 20px;">🎙️</button>
+        <button id="stop-btn" style="background: red; color: white; border: none; padding: 10px; border-radius: 5px; margin-left: 10px;">Stop</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

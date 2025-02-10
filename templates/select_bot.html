@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Select Your AI Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background: url('{{ url_for('static', filename='images/img1.jpg') }}') no-repeat center center fixed; background-size: cover; text-align: left; padding: 20px;">
+    <h1 style="color: white;">Select Your AI Bot</h1>
+    <div class="bot-selection-container" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <div class="bot-card" style="text-align: center; background: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 10px;">
+            <img src="{{ url_for('static', filename='images/actor.png') }}" width="150px" style="border-radius: 50%;">
+            <h2 style="color: white;">Humble Actor</h2>
+            <a href="{{ url_for('chat', bot_type='humble_actor') }}">
+                <button style="background: gray; color: white; border: none; padding: 10px; border-radius: 5px;">Select</button>
+            </a>
+        </div>
+        <div class="bot-card" style="text-align: center; background: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 10px;">
+            <img src="{{ url_for('static', filename='images/banker.png') }}" width="150px" style="border-radius: 50%;">
+            <h2 style="color: white;">Rude Banker</h2>
+            <a href="{{ url_for('chat', bot_type='rude_banker') }}">
+                <button style="background: gray; color: white; border: none; padding: 10px; border-radius: 5px;">Select</button>
+            </a>
+        </div>
+        <div class="bot-card" style="text-align: center; background: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 10px;">
+            <img src="{{ url_for('static', filename='images/byte.jpg') }}" width="150px" style="border-radius: 50%;">
+            <h2 style="color: white;">Byte - AI Software Engineer</h2>
+            <a href="{{ url_for('chat', bot_type='byte') }}">
+                <button style="background: gray; color: white; border: none; padding: 10px; border-radius: 5px;">Select</button>
+            </a>
+        </div>
+        <div class="bot-card" style="text-align: center; background: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 10px;">
+            <img src="{{ url_for('static', filename='images/elara.png') }}" width="150px" style="border-radius: 50%;">
+            <h2 style="color: white;">Elara - Storyteller</h2>
+            <a href="{{ url_for('chat', bot_type='elara') }}">
+                <button style="background: gray; color: white; border: none; padding: 10px; border-radius: 5px;">Select</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
